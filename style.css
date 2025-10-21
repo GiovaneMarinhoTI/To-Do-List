@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0e0e0e;
+  color: #f1f1f1;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+  width: 100%;
+  max-width: 420px;
+  background: #1b1b1b;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ;TÍTULO E RELÓGIO */
+.container h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #00ff88;
+  text-shadow: 0 0 6px #00ff88;
+}
+
+#clock {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #b0ffb0;
+}
+
+/*  GRUPO DE INPUTS */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="datetime-local"] {
+  background: #121212;
+  border: 1px solid #2f2f2f;
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.input-group input:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 5px #00ff88;
+}
+
+.input-group button {
+  background: linear-gradient(90deg, #00ff88, #00ccff);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-group button:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+/* LISTA DE TAREFAS */
+#taskList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  background: #222;
+  padding: 12px 14px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  transition: 0.3s;
+  word-break: break-word;
+}
+
+li:hover {
+  background: #2a2a2a;
+}
+
+li.done {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/*  BLOCO DE TEXTO DA TAREFA */
+.task-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-content strong {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.task-content small {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* BOTÃO DE REMOVER */
+.removeBtn {
+  background: #ff5555;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 9px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: center;
+  transition: 0.2s;
+}
+
+.removeBtn:hover {
+  background: #ff2d2d;
+}
+
+/* TAREFA EXPIRADA */
+li.expired {
+  border-left: 5px solid #ff2d2d;
+  background: #331111;
+  color: #ffbaba;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 500px) {
+  .container {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .removeBtn {
+    width: 100%;
+  }
+
+  .input-group button {
+    width: 100%;
+  }
+}
